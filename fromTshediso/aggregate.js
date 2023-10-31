@@ -2,12 +2,13 @@
 //as calculation operator passed to string
 
 function calc(value2, value1, operator) {
-  let v1 = parseFloat(value1);
-  let v2 = parseFloat(value2);
+  let v1 = value1; // = parseFloat(value1);
+  let v2 = value2; // = parseFloat(value2);
+  console.log(typeof v1);
 
   // throw an error if v1 or v2 is not a number
-  if (isNaN(v1) || isNaN(v2)) {
-    throw ErrorMsg;
+  if (typeof v1 != "number" || typeof v2 != "number") {
+    throw "Values must be numeric";
   }
 
   switch (operator) {
@@ -23,7 +24,7 @@ function calc(value2, value1, operator) {
       return ErrorMsg;
   }
 }
-console.log(calc(1, "2", "Multiply"));
+console.log(calc(1, "4", "Multiply"));
 
 /* 
 double Calc (string value1, string value2, string calcOperator){
